@@ -6,7 +6,7 @@
 }
 
 #PokeList{
-    height: 85vh;
+    height: 81vh;
     overflow-y:auto;
     width: 200px;
     background-color: #151313;
@@ -15,6 +15,7 @@
     text-align: center;
 }
 #PokedexMain{
+    margin-top: 32px;
     width: 950px;
     height: 500px;
 }
@@ -59,7 +60,7 @@
 }
 
 .Super{
-    top: 90px;
+    top: 125px;
     left: 70px;
     position: absolute;
     color: #141514;
@@ -153,6 +154,7 @@
 
 .filterbox{
     width: 180px;
+    height: 33px;
     margin-left: 10px;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -169,4 +171,19 @@
 
 .info ul li{
     margin-left: 30px;
+}
+
+
+.selectable{
+  position: absolute;
+  left: 169px;
+  outline: none;
+  border-style: none;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 4px;
+  padding-left: 10px;
+  margin-top: 10px;
+  margin-left: 45px;
+  z-index: 99;
 }
