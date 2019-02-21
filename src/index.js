@@ -9,7 +9,13 @@ class perems {
   @observable oneName = ""
   @observable arrNames = []
   @observable arrPokemon = []
+  @observable arrTypes = []
+  @observable arrParseType = []
+  @observable arrTest = []
+  @observable taging = "normal"
+  @observable urltag = ""
   @observable filter = ""
+
   @computed get filtered(){
     var filMatch = new RegExp(this.filter, "i")
     return toJS(this.arrNames).filter(todo => !this.filter || filMatch.test(todo.name))
@@ -42,13 +48,14 @@ class MainEx extends React.Component{
     filt(e){
 
       obla.filter = e.target.value
-      console.log(obla.filter)
     }
 
     render(){
           return (
               <div>
+              <TypesSelect />
                 <input type="text" className="filterbox" placeholder="Поиск.." value={obla.filter} onChange={this.filt.bind(this)} />
+
               </div>
           );
         }
@@ -64,14 +71,15 @@ class MainEx extends React.Component{
          .then((response) => response.json())
          .then((responseJson) => {
            obla.arrNames = responseJson.results.slice()
-
-           console.log(toJS(obla.arrNames))
-           return responseJson.name;
+           //return responseJson.name;
          })
 
          .catch((error) => {
            console.error(error);
          });
+
+
+
       }
 
 
@@ -80,8 +88,6 @@ class MainEx extends React.Component{
          .then((response) => response.json())
          .then((responseJson) => {
            obla.arrNames = responseJson.results.slice()
-
-           console.log(toJS(obla.arrNames))
 
            return responseJson.name;
          })
@@ -112,6 +118,73 @@ class MainEx extends React.Component{
                 </div>
             );
           }
+    }
+
+
+
+
+@observer class TypesSelect extends React.Component{
+
+      constructor(){
+        super()
+         /*Parse Types*/
+
+         fetch(`https://pokeapi-215911.firebaseapp.com/api/v2/type`)
+          .then((response) => response.json())
+          .then((responseJson) => {
+
+            obla.arrTypes = responseJson.results
+            return responseJson;
+          })
+
+          .catch((error) => {
+            console.error(error);
+          });
+
+
+      }
+
+      addtag = (e) => {
+
+
+        obla.taging = e.target.value
+        obla.urltag = e.target.value
+        if(obla.urltag != 0){
+
+          fetch(`${obla.urltag}`)
+           .then((response) => response.json())
+           .then((responseJson) => {
+
+             obla.arrParseType = responseJson.pokemon.slice()
+             obla.arrTest = []
+             toJS(obla.arrParseType).map(poke => obla.arrTest.push(poke.pokemon))
+
+             obla.arrNames = obla.arrTest;
+           return responseJson;
+         })
+
+         .catch((error) => {
+           console.error(error);
+         });
+       }
+        e.preventDefault();
+      }
+
+
+
+        render() {
+
+          if(obla.arrTypes.length != 0)
+            var types = toJS(obla.arrTypes).map((option, idx) => <option value={option.url} key={idx}>{option.name}</option>)
+
+          return (
+
+              <select className="selectable" onChange={this.addtag}>
+                <option value={0}>Type</option>
+                {types}
+              </select>
+          )
+        }
     }
 
 
@@ -168,9 +241,6 @@ class MainEx extends React.Component{
                         </ul>
                   </div>
                 </div>, document.getElementById("PokedexMain"));
-
-                console.log(responseJson);
-
 
              return responseJson.name;
            })
