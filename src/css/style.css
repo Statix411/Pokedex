@@ -120,25 +120,51 @@
   margin-left: 50px;
 }
 
-.resultsbutt{
+.info{
+  position: absolute;
+  top: 70vh;
+}
+
+.navbuttons{
     position: absolute;
-    top: 92vh;
+    top: 90vh;
     color: #a99d9d;
     float: right;
     width: 220px;
     cursor: pointer;
-    left: 10px;
+    left: 50px;
+
+}
+
+.resultsbutt{
+    position: absolute;
+    top: 93vh;
+    color: #a99d9d;
+    float: right;
+    width: 220px;
+    cursor: pointer;
+    left: 50px;
 
 }
 
 .resultsbutt li{
     list-style-type: none;
     float: left;
-
+    padding: 5px;
+}
+.navbuttons li{
+    list-style-type: none;
+    float: left;
     padding: 5px;
 }
 
 .resultsbutt li:hover{
+  background-color: #111;
+  color: #fff;
+
+}
+
+.navbuttons li:hover{
   background-color: #111;
   color: #fff;
 
@@ -161,12 +187,18 @@
 
 
 
+.info{
+  margin-left: 30px;
+}
 
-/* хром, сафари */
+.info ul li{
+  margin-left: 30px;
+}
+
+
 #PokeList::-webkit-scrollbar { width: 0; }
 
-/* ie 10+ */
+
 #PokeList { -ms-overflow-style: none; }
 
-/* фф (свойство больше не работает, других способов тоже нет)*/
 #PokeList { overflow: -moz-scrollbars-none; }
