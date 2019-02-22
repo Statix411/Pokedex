@@ -4,4 +4,5 @@ This is simple *pokedex app* that allows you to see most important information a
 You can test it by following this [Link](https://statix411.github.io/Pokedex/).
 
 [![js-standard-style](https://cdn.rawgit.com/standard/standard/master/badge.svg)](http://standardjs.com)
+
 (At least I trited to do it, but I was faced with [bug]( https://github.com/eslint/eslint/issues/1967) ang got stuck).
