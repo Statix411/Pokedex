@@ -12,6 +12,8 @@ class perems {
   @observable arrTypes = []
   @observable arrParseType = []
   @observable arrTest = []
+  @observable avatarPoke = ""
+  @observable avPer = 1
   @observable taging = "normal"
   @observable urltag = ""
   @observable filter = ""
@@ -146,7 +148,6 @@ class MainEx extends React.Component{
 
       addtag = (e) => {
 
-
         obla.taging = e.target.value
         obla.urltag = e.target.value
         if(obla.urltag != 0){
@@ -218,11 +219,14 @@ class MainEx extends React.Component{
                 color: '#ffae00',
                 backgroundImage: 'url(src/img/PokedexBack.png)'
             };
+        var art = 0;
         let data = fetch(`https://pokeapi-215911.firebaseapp.com/api/v2/pokemon/${obla.oneName}`)
            .then((response) => response.json())
            .then((responseJson) => {
               var abilitys = responseJson.abilities.map( (num) => <li key={num.ability.name}>{num.ability.name}</li>)
               var types = responseJson.types.map( (num) => <li key={num.type.name}>{num.type.name}</li>)
+              if(obla.avPer == 1 || obla.avPer == 0) obla.avatarPoke = responseJson.sprites.front_default
+              if(obla.avPer == 2) obla.avatarPoke = responseJson.sprites.back_default
 
                ReactDOM.render(
                  <div className="PokedexBack" style={sty}>
@@ -230,7 +234,9 @@ class MainEx extends React.Component{
                       <div className="PokeName">Name: {responseJson.name}</div>
                       <div className="PokeHeight">Height: {responseJson.height}</div>
                       <div className="PokeWeight">Weight: {responseJson.weight}</div>
-                      <div className="Avapos"><img src={responseJson.sprites.front_default} alt=" " height="100" /></div>
+
+                      <ChageImageAv src={responseJson.sprites}/>
+
                       <div className="TextA">Abilities: </div>
                         <ul className="abilitie">
                           {abilitys}
@@ -240,6 +246,8 @@ class MainEx extends React.Component{
                           {types}
                         </ul>
                   </div>
+                  <div className="PokedexButton1" onClick={(e) =>  {<ChageImageAv num={2} />; obla.avPer = 1} }>Front</div>
+                  <div className="PokedexButton2" onClick={(e) =>  {<ChageImageAv num={1} />; obla.avPer = 2} }>Back</div>
                 </div>, document.getElementById("PokedexMain"));
 
              return responseJson.name;
@@ -255,8 +263,25 @@ class MainEx extends React.Component{
         obla.oneName;
             return (
               <div>
+
               </div>
             );
+      }
+    }
+
+
+  @observer class ChageImageAv extends React.Component{
+      render(){
+        return (
+          <div className="Avapos" id="changable">
+          {obla.avPer == 1 &&
+            <img src={this.props.src.front_default} alt="" />
+          }
+          {obla.avPer == 2 &&
+            <img src={this.props.src.back_default} alt="" />
+          }
+          </div>
+        )
       }
     }
 
