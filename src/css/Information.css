@@ -1,0 +1,12 @@
+.info{
+  display: block;
+    position: absolute;
+    top: 70vh;
+    display: block;
+    margin-left: 30px;
+}
+
+
+.info ul li{
+    margin-left: 30px;
+}

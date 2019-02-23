@@ -1,0 +1,75 @@
+
+.navbuttons{
+    position: absolute;
+    top: 90vh;
+    color: #a99d9d;
+    float: right;
+    width: 220px;
+    cursor: pointer;
+    left: 50px;
+}
+
+.resultsbutt{
+    position: absolute;
+    top: 94vh;
+    color: #a99d9d;
+    float: right;
+    width: 220px;
+    cursor: pointer;
+    left: 50px;
+
+}
+
+.resultsbutt li{
+    list-style-type: none;
+    float: left;
+    padding: 5px;
+}
+.navbuttons li{
+    list-style-type: none;
+    float: left;
+    padding: 5px;
+}
+
+.resultsbutt li:hover{
+    background-color: #111;
+    color: #fff;
+
+}
+
+.navbuttons li:hover{
+    background-color: #111;
+    color: #fff;
+}
+
+
+
+.PokedexButton1{
+    font-size: 10pt;
+    padding-top: 2px;
+    padding-left: 9px;
+    color: #fff;
+    cursor: pointer;
+    width:50px;
+    height:25px;
+    border-radius: 25px;
+    background-color: #0a60ca;
+    position: absolute;
+    top: 430px;
+    left: 570px;
+}
+
+.PokedexButton2{
+    font-size: 10pt;
+    padding-top: 2px;
+    padding-left: 11px;
+    color: #fff;
+    cursor: pointer;
+    width:50px;
+    height:25px;
+    border-radius: 25px;
+    background-color: #0a60ca;
+    position: absolute;
+    top: 430px;
+    left: 640px;
+}

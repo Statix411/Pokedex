@@ -1,0 +1,38 @@
+
+#PokeList{
+    height: 81vh;
+    overflow-y:auto;
+    width: 200px;
+    background-color: #151313;
+    color: #fff;
+    padding-top: 20px;
+    text-align: center;
+}
+#PokedexMain{
+    margin-top: 32px;
+    width: 950px;
+    height: 500px;
+}
+/* dis scrollbar*/
+#PokeList::-webkit-scrollbar { width: 0; }
+#PokeList { -ms-overflow-style: none; }
+#PokeList { overflow: -moz-scrollbars-none; }
+
+
+
+.ListP{
+    line-height: 2.5;
+    list-style-type: none;
+}
+
+.ListP li {
+    cursor: pointer;
+}
+
+.ListP li:hover{
+    color: #ffae00;
+}
+
+#PokeList ul li:active > .info{
+    height: 0;
+}

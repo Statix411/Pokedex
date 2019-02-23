@@ -1,0 +1,29 @@
+
+
+.filterbox{
+    width: 180px;
+    height: 33px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-style: none;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    padding-left: 16px;
+}
+
+
+.selectable{
+    position: absolute;
+    left: 169px;
+    outline: none;
+    border-style: none;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 4px;
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-left: 45px;
+    z-index: 99;
+}

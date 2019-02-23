@@ -1,0 +1,67 @@
+
+.PokedexBack{
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+}
+
+.PokeName{
+    top: 100px;
+    left: 90px;
+}
+
+.PokeHeight{
+    left: 90px;
+    top: 180px;
+}
+
+.PokeWeight{
+    left: 90px;
+    top: 140px;
+}
+
+.Super{
+    top: 125px;
+    left: 70px;
+    position: absolute;
+    color: #141514;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    font-size: 14pt;
+    line-height: 1.6;
+}
+
+.Avapos{
+    z-index: 99;
+    position: absolute;
+    top: 160px;
+    left: 517px;
+}
+
+.TextA{
+    top: 220px;
+    left: 90px;
+}
+
+.Types{
+    top: 280px;
+    left: 90px;
+}
+
+.abilitie{
+    top: 220px;
+    left: 190px;
+}
+
+.abilitie li{
+    margin-left: 50px;
+}
+
+.typesul{
+    top: 280px;
+    left: 190px;
+}
+
+.typesul li{
+    margin-left: 50px;
+}
