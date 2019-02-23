@@ -1,11 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import {observer} from 'mobx-react';
 import { computed, observable, toJS } from "mobx";
 import pokemonClassPerems from './ClassesPoke'
-
-
-
 
 const ChangeImage = observer((props) => {
   return (
@@ -19,6 +16,5 @@ const ChangeImage = observer((props) => {
     </div>
   )
 })
-
 
 export default ChangeImage

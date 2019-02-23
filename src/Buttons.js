@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import {observer} from 'mobx-react';
 import { computed, observable, toJS } from "mobx";
 
-
 var offset = 0;
 
 export default function Buttons(props){
@@ -19,6 +18,6 @@ export default function Buttons(props){
           <li onClick={(e) => props.fetchlist(0, 20)}>20</li>
           <li onClick={(e) => props.fetchlist(0, 50)}>50</li>
         </ul>
-        </div>
+      </div>
     );
 }

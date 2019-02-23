@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import {observer} from 'mobx-react';
 import { computed, observable, toJS } from "mobx";
 
-
 class perems {
   @observable oneName = ""
   @observable arrNames = []

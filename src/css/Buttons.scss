@@ -1,0 +1,41 @@
+$colorButText: #a99d9d;
+$bg-colorbutt: #111111;
+
+.navbuttons{
+    position: absolute;
+    top: 90vh;
+    color: $colorButText;
+    float: right;
+    cursor: pointer;
+    left: 55px;
+}
+
+.resultsbutt{
+    position: absolute;
+    top: 94vh;
+    color: $colorButText;
+    float: right;
+    cursor: pointer;
+    left: 55px;
+}
+
+.resultsbutt li{
+    list-style-type: none;
+    float: left;
+    padding: 5px;
+}
+.navbuttons li{
+    list-style-type: none;
+    float: left;
+    padding: 5px;
+}
+
+.resultsbutt li:hover{
+    background-color: $bg-colorbutt;
+    color: #fff;
+}
+
+.navbuttons li:hover{
+    background-color: $bg-colorbutt;
+    color: #fff;
+}
