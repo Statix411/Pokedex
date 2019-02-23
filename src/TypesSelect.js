@@ -6,9 +6,7 @@ import pokemonClassPerems from './ClassesPoke'
 
 let initial = 1
 
-
 const TypeSelect = observer(() => {
-
     if(initial == 1){
       fetch(`https://pokeapi-215911.firebaseapp.com/api/v2/type`)
        .then((response) => response.json())
@@ -17,7 +15,6 @@ const TypeSelect = observer(() => {
          pokemonClassPerems.arrTypes = responseJson.results
          return responseJson;
        })
-
        .catch((error) => {
          console.error(error);
        });
@@ -29,11 +26,9 @@ const TypeSelect = observer(() => {
       pokemonClassPerems.taging = e.target.value
       pokemonClassPerems.urltag = e.target.value
       if(pokemonClassPerems.urltag != 0){
-
         fetch(`${pokemonClassPerems.urltag}`)
          .then((response) => response.json())
          .then((responseJson) => {
-
            pokemonClassPerems.arrParseType = responseJson.pokemon.slice()
            pokemonClassPerems.arrTest = []
            toJS(pokemonClassPerems.arrParseType).map(poke => pokemonClassPerems.arrTest.push(poke.pokemon))
@@ -41,7 +36,6 @@ const TypeSelect = observer(() => {
            pokemonClassPerems.arrNames = pokemonClassPerems.arrTest;
          return responseJson;
        })
-
        .catch((error) => {
          console.error(error);
        });

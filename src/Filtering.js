@@ -16,6 +16,6 @@ const Filtering = observer(() => {
 
         </div>
     )
-  })
+})
 
-  export default Filtering
+export default Filtering

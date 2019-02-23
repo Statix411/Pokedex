@@ -5,8 +5,6 @@ import PokemonsList from './PokemonsList';
 import PokedexMain from './PokedexMain';
 import './importCss'
 
-
-
 function MainEx(){
       return (
           <div>

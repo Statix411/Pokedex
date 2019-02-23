@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import {observer} from 'mobx-react';
 import { computed, observable, toJS } from "mobx";
