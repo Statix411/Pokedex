@@ -42,5 +42,4 @@ let config = {
     new ExtractTextPlugin('styles.css')
   ]
 }
-
 module.exports = config
